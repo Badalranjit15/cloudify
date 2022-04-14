@@ -37,5 +37,5 @@ variable "enable_vpn_gateway" {
 variable "azs" {
   type        = list(string)
   description = "List of azs"
-  default     = ["${local.region}a", "${local.region}b"]
+  default     = ["${var.region}a", "${var.region}b"]
 }
