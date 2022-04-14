@@ -22,12 +22,6 @@ variable "private_subnets" {
   default     = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
 }
 
-variable "public_subnets" {
-  type        = list(string)
-  description = "List of public subnets to create within the VPC"
-  default     = ["10.0.101.0/24", "10.0.102.0/24", "10.0.103.0/24"]
-}
-
 variable "enable_nat_gateway" {
   type        = bool
   description = "Whether or not to enable a NAT gateway for the private subnets"
@@ -38,4 +32,10 @@ variable "enable_vpn_gateway" {
   type        = bool
   description = "Whether or not to enable a VPN gateway"
   default     = false
+}
+
+variable "azs" {
+  type        = list(string)
+  description = "List of azs"
+  default     = ["${local.region}a", "${local.region}b"]
 }
