@@ -89,7 +89,7 @@ node_templates:
           vpc_name: { get_input: vpc_name }
           vpc_cidr: { get_input: vpc_cidr }
           private_subnets: { get_input: private_subnets }
-          public_subnets: { get_input: public_subnets }
+         # public_subnets: { get_input: public_subnets }
           enable_nat_gateway: { get_input: enable_nat_gateway }
           enable_vpn_gateway: { get_input: enable_vpn_gateway }
     relationships:
