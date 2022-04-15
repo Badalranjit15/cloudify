@@ -46,12 +46,6 @@ variable "private_subnet_count" {
  # default     = ["${var.region}a", "${var.region}b"]
 #}
 
-variable "cidr_ab" {
-    type = map
-    default = {
-        development     = "172.22"
-    }
-}
 
 locals {
     cidr_c_private_subnets  = 1
@@ -67,11 +61,6 @@ locals {
     availability_zones = data.aws_availability_zones.available.names
 }
 
-variable "environment" {
-    type = string
-    description = "Options: development"
-}
-
 locals {
     private_subnets = [
         for az in local.availability_zones : 
@@ -80,6 +69,4 @@ locals {
         ]
 }
 
-#locals {
-#   subnet_count = var.subnet_count >= 2 ? var.subnet_count : length(data.aws_availability_zones.all.names)
-#}
+
