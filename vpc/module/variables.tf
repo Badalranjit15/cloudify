@@ -75,7 +75,7 @@ variable "environment" {
 locals {
     private_subnets = [
         for az in local.availability_zones : 
-            "${lookup(var.cidr_ab, var.environment)}.${local.cidr_c_private_subnets + index(local.availability_zones, az)}.0/24"
+            "172.22.${local.cidr_c_private_subnets + index(local.availability_zones, az)}.0/24"
             if index(local.availability_zones, az) < local.max_private_subnets
         ]
 }
