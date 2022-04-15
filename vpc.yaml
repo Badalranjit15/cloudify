@@ -33,11 +33,11 @@ inputs:
     display_label: VPC CIDR
     default: 10.0.0.0/16
 
-  private_subnets:
+  private_subnet_count:
     #type: string
     type: list
-    description: List of private subnets to create within the VPC
-    display_label: Private Subnets
+    description: Numbers of private subnets to create within the VPC
+    display_label: Private Subnets Count
     #default:
     #  - 10.0.1.0/24
     #  - 10.0.2.0/24
@@ -88,7 +88,8 @@ node_templates:
           region: { get_input: region }
           vpc_name: { get_input: vpc_name }
           vpc_cidr: { get_input: vpc_cidr }
-          private_subnets: { get_input: private_subnets }
+          #private_subnets: { get_input: private_subnets }
+          private_subnet_count: { get_input: private_subnet_count }
          # public_subnets: { get_input: public_subnets }
           enable_nat_gateway: { get_input: enable_nat_gateway }
           enable_vpn_gateway: { get_input: enable_vpn_gateway }
