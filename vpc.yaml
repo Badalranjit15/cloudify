@@ -49,7 +49,7 @@ inputs:
         - 3
         - 4
    cidr_ab:
-     type: map
+     type: string
      default:  development
   
  # public_subnets:
