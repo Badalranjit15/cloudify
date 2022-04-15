@@ -34,8 +34,8 @@ inputs:
     default: 10.0.0.0/16
 
   private_subnet_count:
-    #type: string
-    type: list
+    type: string
+    #type: list
     description: Numbers of private subnets to create within the VPC
     display_label: Private Subnets Count
     #default:
