@@ -34,6 +34,12 @@ variable "enable_vpn_gateway" {
   default     = false
 }
 
+variable "private_subnet_count" {
+  type        = string 
+  description = "Numbers of private subnet "
+  default     = false
+}
+
 #variable "azs" {
 #  type        = list(string)
 #  description = "List of azs"
@@ -50,7 +56,7 @@ variable "cidr_ab" {
 locals {
     cidr_c_private_subnets  = 1
 
-    max_private_subnets     = 2
+    max_private_subnets     = var.private_subnet_count
 }
 
 data "aws_availability_zones" "available" {
