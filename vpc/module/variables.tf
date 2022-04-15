@@ -35,7 +35,7 @@ variable "enable_vpn_gateway" {
 }
 
 variable "private_subnet_count" {
-  type        = string 
+  type        = number 
   description = "Numbers of private subnet "
   default     = false
 }
