@@ -48,7 +48,10 @@ inputs:
         - 2
         - 3
         - 4
-
+   cidr_ab:
+     type: map
+     default:  development
+  
  # public_subnets:
  #   type: list
  #   description: List of public subnets to create within the VPC
